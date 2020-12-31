@@ -9,7 +9,7 @@ module top_module (
     my_dff8 inst1 (clk, d, w1);
     my_dff8 inst2 (clk, w1, w2);
     my_dff8 inst3 (clk, w2, w3);
-    
+
     always @ (*)
         if (sel == 2'b00) begin
             q = d;
@@ -19,6 +19,15 @@ module top_module (
             q = w2;
         end else if (sel == 2'b11) begin
             q = w3;
-        end          
-        
+        end
+    //another way to make a 4-to-1 multiplexer
+    /*
+    always @ (*)
+    	case(sel)
+        	2'b00: q = d;
+            2'b01: q = w1;
+            2'b10: q = w2;
+            2'b11: q = w3;
+        endcase
+    */
 endmodule

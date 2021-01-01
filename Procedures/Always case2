@@ -23,4 +23,18 @@ module top_module (
             default: pos = 2'd00;
         endcase
 
+    /*
+    always @(*) begin
+        if (in[0]==1'b1)
+            pos = 0;
+        else if (in[1]==1'b1)
+            pos = 1;
+        else if (in[2]==1'b1)
+            pos = 2;
+        else if (in[3]==1'b1)
+            pos = 3;
+        else
+            pos = 0;
+    end
+    */
 endmodule

@@ -38,4 +38,16 @@ module top_module (
     end
     */
     
+    /*
+    always @ (*) begin
+        casez (in)
+            4'b1000: pos = 2'd3;
+            4'bz100: pos = 2'd2;
+            4'bzz10: pos = 2'd1;
+            4'bzzz1: pos = 2'd0;
+            default: pos = 2'd0;
+        endcase  
+    end
+    */
+    
 endmodule

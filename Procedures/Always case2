@@ -1,0 +1,26 @@
+module top_module (
+    input [3:0] in,
+    output reg [1:0] pos  );
+    
+    always @ (*)
+        case (in)
+            4'd00: pos = 2'd00;
+            4'd01: pos = 2'd00;
+            4'd02: pos = 2'd01;
+            4'd03: pos = 2'd01;
+            4'd04: pos = 2'd02;
+            4'd05: pos = 2'd02;
+            4'd06: pos = 2'd03;
+            4'd07: pos = 2'd03;
+            4'd08: pos = 2'd04;
+            4'd09: pos = 2'd04;
+            4'd10: pos = 2'd05;
+            4'd11: pos = 2'd05;
+            4'd12: pos = 2'd06;
+            4'd13: pos = 2'd06;
+            4'd14: pos = 2'd07;
+            4'd15: pos = 2'd07;
+            default: pos = 2'd00;
+        endcase
+
+endmodule

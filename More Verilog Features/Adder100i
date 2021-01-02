@@ -37,3 +37,47 @@ module HADD(
     assign cout = a & b;
 
 endmodule
+
+/*
+module top_module
+    #(parameter N = 100)
+    ( 
+    input [99:0] a, b,
+    input cin,
+    output [99:0] cout,
+    output [99:0] sum );
+    
+    FADD add0 (a[0], b[0], cin, sum[0], cout[0]);
+    
+    always @ (*) begin
+        genvar i;
+        generate
+            for (i = 1; i < N; i = i + 1) begin
+            FADD addi (a[i], b[i], cout[(i - 1)], sum[i], cout[i]);
+            end
+        endgenerate
+    end
+
+endmodule
+
+module FADD( 
+    input a, b, cin,
+    output sum, cout);
+    
+    wire cout1, cout2, sum1;
+    
+    HADD add1 (a, b, sum1, cout1);
+    HADD add2 (cin, sum1, sum, cout2);
+    assign cout = cout1 | cout2;
+
+endmodule
+
+module HADD( 
+    input a, b,
+    output sum, cout);
+    
+    assign sum = a ^ b;
+    assign cout = a & b;
+
+endmodule
+*/

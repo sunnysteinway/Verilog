@@ -5,24 +5,16 @@ module top_module(
     output [99:0] sum );
     
     FADD add0 (a[0], b[0], cin, sum[0], cout[0]);
-    FADD add1 (a[1], b[1], cout[0], sum[1], cout[1]);
-    FADD add2 (a[2], b[2], cout[1], sum[2], cout[2]);
-    FADD add3 (a[3], b[3], cout[2], sum[3], cout[3]);
-    FADD add4 (a[4], b[4], cout[3], sum[4], cout[4]);
-    FADD add5 (a[5], b[5], cout[4], sum[5], cout[5]);
-    FADD add6 (a[6], b[6], cout[5], sum[6], cout[6]);
-    FADD add7 (a[7], b[7], cout[6], sum[7], cout[7]);
-    FADD add8 (a[8], b[8], cout[7], sum[8], cout[8]);
-    FADD add9 (a[9], b[9], cout[8], sum[9], cout[9]);
-    FADD add10 (a[10], b[10], cout[9], sum[10], cout[10]);
-    /*
-    genvar i;
-    generate
-        for (i = 1; i < 100; i = i + 1) begin
-            FADD add2 (a[i], b[i], cout [i - 1], sum[i], cout[i]);
-        end
-    endgenerate
-    */
+    FADD add1 (a[1], b[1], cout[(0)], sum[1], cout[1]);                                                                                                 
+    FADD add2 (a[2], b[2], cout[(1)], sum[2], cout[2]);                                                                                                 
+    FADD add3 (a[3], b[3], cout[(2)], sum[3], cout[3]);                                                                                                 
+    FADD add4 (a[4], b[4], cout[(3)], sum[4], cout[4]);
+    // keeps on going...
+    FADD add96 (a[96], b[96], cout[(95)], sum[96], cout[96]);                                                                                           
+    FADD add97 (a[97], b[97], cout[(96)], sum[97], cout[97]);                                                                                           
+    FADD add98 (a[98], b[98], cout[(97)], sum[98], cout[98]);                                                                                           
+    FADD add99 (a[99], b[99], cout[(98)], sum[99], cout[99]);
+    
 endmodule
 
 module FADD( 

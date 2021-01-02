@@ -1,0 +1,20 @@
+module top_module( 
+    input a, b, cin,
+    output cout, sum );
+    
+    wire cout1, cout2, sum1;
+    
+    hadd add1 (a, b, cout1, sum1);
+    hadd add2 (cin, sum1, cout2, sum);
+    assign cout = cout1 | cout2;
+
+endmodule
+
+module hadd( 
+    input a, b,
+    output cout, sum );
+    
+    assign sum = a ^ b;
+    assign cout = a & b;
+
+endmodule

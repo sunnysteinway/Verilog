@@ -2,17 +2,25 @@ module top_module(
     input a, b, cin,
     output cout, sum );
     
+    fadd add1(a, b, cin, sum, cout);
+
+endmodule
+
+module fadd( 
+    input a, b, cin,
+    output sum, cout);
+    
     wire cout1, cout2, sum1;
     
-    hadd add1 (a, b, cout1, sum1);
-    hadd add2 (cin, sum1, cout2, sum);
+    hadd add1 (a, b, sum1, cout1);
+    hadd add2 (cin, sum1, sum, cout2);
     assign cout = cout1 | cout2;
 
 endmodule
 
 module hadd( 
     input a, b,
-    output cout, sum );
+    output sum, cout);
     
     assign sum = a ^ b;
     assign cout = a & b;

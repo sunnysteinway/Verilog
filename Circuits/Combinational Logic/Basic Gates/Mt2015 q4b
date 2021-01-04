@@ -1,0 +1,6 @@
+module top_module ( input x, input y, output z );
+    
+    //this is an XNOR gate
+    assign z = ~x ^ y;
+
+endmodule

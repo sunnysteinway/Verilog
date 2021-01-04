@@ -5,7 +5,7 @@ module top_module (
     output motor         // Vibrate
 );
     
-    assign ringer = (ring ^ vibrate_mode) & ring;
+    assign ringer = ring & ~vibrate_mode;
     assign motor = ring & vibrate_mode;    
 
 endmodule

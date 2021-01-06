@@ -1,0 +1,12 @@
+module top_module( 
+    input [1023:0] in,
+    input [7:0] sel,
+    output [3:0] out );
+    
+    //select one bit at a time then concatenate together
+    assign out = {in[sel*4 + 3], in[sel*4 + 2], in[sel*4 + 1], in[sel*4]};
+    
+    //use "indexed vector part select" method to slice vector
+    //assign out = in[sel*4 +: 4];  //select starting at index "sel*4", then select a total width of 4 bits with increasing (+:) index number
+
+endmodule

@@ -1,0 +1,13 @@
+module top_module(
+    input a,
+    input b,
+    input c,
+    output out); 
+    
+    //SOP method
+    assign out = b | (~b & c) | (a & ~b & ~c);
+    
+    //POS method
+    //assign out = (a | b | c);
+
+endmodule

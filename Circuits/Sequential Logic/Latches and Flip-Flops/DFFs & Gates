@@ -1,0 +1,28 @@
+module top_module (
+    input clk,
+    input x,
+    output z
+);
+    wire w0, w1, w2;
+    wire [2:0] q;
+    
+    assign w0 = q[0] ^ x;
+    assign w1 = ~q[1] & x;
+    assign w2 = ~q[2] | x;
+    
+    abc dff0 (w0, clk, q[0]);
+    abc dff1 (w1, clk, q[1]);
+    abc dff2 (w2, clk, q[2]);
+    
+    assign z = ~ (| q);
+
+endmodule
+
+
+module abc (input d, input clk, output q);
+    
+    always @ (posedge clk)
+        
+        q <= d;
+    
+endmodule

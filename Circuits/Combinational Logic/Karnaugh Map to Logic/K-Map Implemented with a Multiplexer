@@ -1,0 +1,9 @@
+module top_module (
+    input c,
+    input d,
+    output [3:0] mux_in
+); 
+    //select the output according to a&b based on the Karnaugh Map
+    assign mux_in = {(c & d), (~d), 1'b0, (c | d)};
+
+endmodule

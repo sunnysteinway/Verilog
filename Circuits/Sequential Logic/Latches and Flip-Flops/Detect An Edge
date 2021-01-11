@@ -4,9 +4,12 @@ module top_module (
     output [7:0] pedge
 );
     
-    always @ (posedge clk and posedge in) begin
+    reg [7:0] temp;
+    
+    always @ (posedge clk) begin
         
-        pedge <= (in == 0) ? 0 : in;
+        temp <= in; 	//remember the state of the previous cycle
+        pedge <= in & ~temp; 	//a positive edge occurs if input was 0 and now is 1
         
     end
 

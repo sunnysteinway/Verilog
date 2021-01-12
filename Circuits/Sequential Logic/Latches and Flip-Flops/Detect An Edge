@@ -8,8 +8,8 @@ module top_module (
     
     always @ (posedge clk) begin
         
-        temp <= in; 	//remember the state of the previous cycle
-        pedge <= in & ~temp; 	//a positive edge occurs if input was 0 and now is 1
+        delay <= in; 	//remember the state of the previous cycle
+        pedge <= in & ~delay; 	//a positive edge occurs if input was 0 and now is 1
         
     end
 

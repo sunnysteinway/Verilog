@@ -4,7 +4,7 @@ module top_module (
     output [7:0] pedge
 );
     
-    reg [7:0] temp;
+    reg [7:0] delay;
     
     always @ (posedge clk) begin
         
@@ -12,5 +12,9 @@ module top_module (
         pedge <= in & ~delay; 	//a positive edge occurs if input was 0 and now is 1
         
     end
+    
+    /*
+    For more info and further explanation, visit: https://www.chipverify.com/verilog/verilog-positive-edge-detector
+    */
 
 endmodule

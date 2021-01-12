@@ -1,0 +1,25 @@
+module top_module (
+    input clk,
+    input d,
+    output q
+);
+    
+    reg n, m;
+    
+    always @ (posedge clk)	//detect positive edge
+        
+        m <= n ^ d;
+    
+    always @ (negedge clk)	//detect negative edge
+        
+        n <= m ^ d;
+    
+    assign q = m ^ n;	//combine both positive and negative edge together 
+    
+    /*
+    when it is positive edge, q = m ^ n = (n ^ d) ^ n = d;
+    when it is negative edge, q = m ^ n = m ^ (m ^ d) = d;
+    *** q = n ^ n ^ q
+    */
+
+endmodule

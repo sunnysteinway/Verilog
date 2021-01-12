@@ -4,12 +4,12 @@ module top_module (
     output [7:0] anyedge
 );
     
-    reg [7:0] temp;
+    reg [7:0] delay;
     
     always @ (posedge clk) begin
         
-        temp <= in;
-        anyedge <= in ^ temp;
+        delay <= in;
+        anyedge <= in ^ delay;
         
     end
 

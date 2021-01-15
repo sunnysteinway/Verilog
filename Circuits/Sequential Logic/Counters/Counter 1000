@@ -1,0 +1,16 @@
+module top_module (
+    input clk,
+    input reset,
+    output OneHertz,
+    output [2:0] c_enable
+);
+    reg [3:0] q0, q1;
+    wire [3:0] a, b;
+        
+    bcdcount DIV0 (clk, reset, 1, q0);
+    assign a = (q0 == 4'd9) ? 1 : 0;
+    bcdcount DIV1 (clk, reset, a, q1);
+    assign b = (q1 == 4'd9) ? 1 : 0;
+    bcdcount DIV2 (clk, reset, b, c_enable);
+    
+endmodule
